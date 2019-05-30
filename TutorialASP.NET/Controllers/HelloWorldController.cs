@@ -20,22 +20,12 @@ namespace TutorialASP.NET.Controllers
             return View();
         }
 
-        ////GET: /HelloWorld/Welcome/
-        //public string Welcome()
-        //{
-        //    return "This is the Welcome action method...";
-        //}
+        public IActionResult Welcome(string name, int numTimes = 1)
+        {
+            ViewData["Message"] = "Hello " + name;
+            ViewData["NumTimes"] = numTimes;
 
-        // GET: /HelloWorld/Welcome/ 
-        // Requires using System.Text.Encodings.Web;
-        //public string Welcome(string name, int numTimes = 1)
-        //{
-        //    return HtmlEncoder.Default.Encode($"Hello {name}, NumTimes is: {numTimes}");
-        //}
-
-        //public string Welcome(string name, int ID = 1)
-        //{
-        //    return HtmlEncoder.Default.Encode($"Hello {name}, ID: {ID}");
-        //}
+            return View();
+        }
     }
 }
